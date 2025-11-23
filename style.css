@@ -1,0 +1,164 @@
+/* =======================================================
+   Yumel Design System — Colors & Typography (Web)
+   Using: Nunito + Playfair Display
+   ======================================================= */
+
+/* -----------------------------
+   FONT IMPORTS
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+
+/* -----------------------------
+   LIGHT MODE VARIABLES
+------------------------------ */
+:root {
+  /* Brand Colors */
+  --yumel-pink: #FF8AD9;
+  --yumel-pink-deep: #F04D96;
+
+  --yumel-blue: #90D4FF;
+  --yumel-blue-deep: #5FA3E6;
+
+  /* Neutral */
+  --yumel-background: #FFFFFF;
+  --yumel-surface: #F9F9FB;
+  --yumel-text: #2A2A2A;
+  --yumel-grey: #AFAFB9;
+
+  /* Semantic */
+  --yumel-success: #6BCB77;
+  --yumel-warning: #F7C948;
+  --yumel-error: #E85A6A;
+
+  /* Typography */
+  --font-primary: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-title: "Playfair Display", serif;
+
+  /* Gradient */
+  --yumel-gradient: linear-gradient(135deg, #FF8AD9 0%, #90D4FF 100%);
+}
+
+/* -----------------------------
+   DARK MODE VARIABLES
+------------------------------ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Brand (more saturated for dark mode) */
+    --yumel-pink: #FF6ECF;
+    --yumel-pink-deep: #FF2F8C;
+
+    --yumel-blue: #64B6F7;
+    --yumel-blue-deep: #2E7CCD;
+
+    /* Backgrounds */
+    --yumel-background: #0C0C0F;
+    --yumel-surface: #1A1A1E;
+
+    /* Text */
+    --yumel-text: #EAEAEA;
+    --yumel-grey: #6E6E73;
+
+    /* Semantic */
+    --yumel-success: #3FAF55;
+    --yumel-warning: #D7A72A;
+    --yumel-error: #FF6A7F;
+
+    /* Gradient updated for dark theme */
+    --yumel-gradient: linear-gradient(135deg, #FF6ECF 0%, #64B6F7 100%);
+  }
+}
+
+/* -----------------------------
+   GLOBAL STYLES
+------------------------------ */
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  background: var(--yumel-background);
+  color: var(--yumel-text);
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   HEADER
+------------------------------ */
+header {
+  background: var(--yumel-gradient);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-title);
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+/* -----------------------------
+   MAIN CONTENT
+------------------------------ */
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+h2 {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+p, li {
+  font-family: var(--font-primary);
+  color: var(--yumel-text);
+}
+
+ul {
+  margin-left: 1.2rem;
+}
+
+/* -----------------------------
+   FOOTER
+------------------------------ */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--yumel-surface);
+  font-size: 0.9rem;
+  color: var(--yumel-grey);
+}
+
+/* -----------------------------
+   LINKS
+------------------------------ */
+a {
+  color: var(--yumel-blue-deep);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   OPTIONAL: Buttons
+------------------------------ */
+.y-button-primary {
+  background: var(--yumel-pink);
+  color: white;
+  font-family: var(--font-primary);
+  border-radius: 8px;
+  padding: 0.7rem 1.3rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.y-button-primary:hover {
+  background: var(--yumel-pink-deep);
+}
