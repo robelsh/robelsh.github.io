@@ -1,12 +1,20 @@
 /* =======================================================
    Yumel Design System — Colors & Typography (Web)
-   Using: Nunito + Playfair Display
+   Using: Nunito + Boecklins Universe
    ======================================================= */
 
 /* -----------------------------
    FONT IMPORTS
 ------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+
+@font-face {
+  font-family: 'Boecklins Universe';
+  src: url('Boecklins Universe.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 /* -----------------------------
    LIGHT MODE VARIABLES
@@ -32,7 +40,7 @@
 
   /* Typography */
   --font-primary: "Nunito", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-title: "Playfair Display", serif;
+  --font-title: "Boecklins Universe", serif;
 
   /* Gradient */
   --yumel-gradient: linear-gradient(135deg, #FF8AD9 0%, #90D4FF 100%);
@@ -112,7 +120,8 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-p, li {
+p,
+li {
   font-family: var(--font-primary);
   color: var(--yumel-text);
 }
