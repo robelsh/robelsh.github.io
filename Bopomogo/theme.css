@@ -1,0 +1,256 @@
+/* ==========================================================================
+   BopomoGo Theme
+   ========================================================================== */
+
+:root {
+  /* =========================================
+     Color Variables (Light Mode - Default)
+     ========================================= */
+  
+  /* Backgrounds */
+  --bg-color: #f9f9fc;
+  --card-bg: #ffffff;
+  --surface-bg: #f2f2f7;
+
+  /* Texts */
+  --text-primary: #191919;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+
+  /* Accents */
+  --accent: #7547e0;
+  --accent-light: #9372ef;
+  --coral: #f9724c;
+  --gold: #f9d133;
+
+  /* Feedback */
+  --success: #19bf72;
+  --error: #e5333f;
+  --warning: #f2990c;
+
+  /* Zhuyin Categories */
+  --initial-color: #7f59e5;
+  --medial-color: #f27f3f;
+  --final-color: #26b2bf;
+  --combination-color: #f24c99;
+
+  /* =========================================
+     Layout Variables
+     ========================================= */
+  --corner-radius: 20px;
+  --card-corner-radius: 24px;
+  --padding: 20px;
+  --padding-lg: 28px;
+  --spacing: 16px;
+
+  /* =========================================
+     Typography Variables
+     ========================================= */
+  /* System font stacks pour iOS, macOS, Windows, Android */
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-system-rounded: ui-rounded, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* =========================================
+       Color Variables (Dark Mode)
+       ========================================= */
+    
+    /* Backgrounds */
+    --bg-color: #111123;
+    --card-bg: #212138;
+    --surface-bg: #19192d;
+
+    /* Texts */
+    --text-primary: #ffffff;
+    --text-secondary: #b2b2b2;
+    --text-muted: #727272;
+
+    /* Accents */
+    --accent: #6b38d8;
+    --accent-light: #8c60f2;
+    --coral: #f96b3f;
+    --gold: #f9c626;
+
+    /* Feedback */
+    --success: #2dcc7a;
+    --error: #f23f4c;
+    --warning: #f9a519;
+
+    /* Zhuyin Categories */
+    --initial-color: #844cea;
+    --medial-color: #f98c38;
+    --final-color: #38bfb2;
+    --combination-color: #d8337f;
+  }
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-system-rounded); /* Par défaut, les textes (Corps) utilisent la font arrondie */
+  font-weight: 400; /* Regular */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Typography Classes
+   ========================================================================== */
+
+.font-zhuyin {
+  font-family: var(--font-system);
+  font-weight: 500; /* Medium */
+}
+
+.font-hanzi {
+  font-family: var(--font-system);
+  font-weight: 400; /* Regular */
+}
+
+.title {
+  font-family: var(--font-system-rounded);
+  font-weight: 700; /* Bold */
+  color: var(--text-primary);
+  margin-top: 0;
+  margin-bottom: var(--spacing);
+}
+
+.body-text {
+  font-family: var(--font-system-rounded);
+  font-weight: 400; /* Regular */
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Layout & Utility Classes
+   ========================================================================== */
+
+.container {
+  padding: var(--padding);
+}
+
+.container-lg {
+  padding: var(--padding-lg);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.stack-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing);
+}
+
+/* ==========================================================================
+   UI Components
+   ========================================================================== */
+
+/* 1. Zuzu Card */
+.zuzu-card {
+  background-color: var(--card-bg);
+  border-radius: var(--card-corner-radius);
+  padding: var(--padding);
+  /* Optionnel : Légère ombre pour donner un peu de relief (très native iOS) */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03); 
+}
+
+@media (prefers-color-scheme: dark) {
+  .zuzu-card {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); /* Plus marqué en dark mode pour détacher du fond */
+  }
+}
+
+/* 2. Primary Button */
+.primary-button {
+  width: 100%;
+  max-width: 100%;
+  padding: 16px var(--padding);
+  background-color: var(--accent);
+  color: #ffffff;
+  font-family: var(--font-system-rounded);
+  font-weight: 600; /* Semibold */
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--corner-radius);
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Supprime l'apparence native sur certains navigateurs mobiles */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.primary-button:hover {
+  opacity: 0.9;
+}
+
+.primary-button:active {
+  transform: scale(0.98); /* Effet "pression" très iOS */
+}
+
+/* 3. Category Badge */
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px; /* Capsule */
+  padding: 4px 10px;
+  color: #ffffff;
+  font-family: var(--font-system-rounded);
+  font-size: 0.75rem; /* Caption */
+  font-weight: 600; /* Semibold */
+  line-height: 1.2;
+}
+
+/* Modifieurs de couleur pour les badges avec 85% d'opacité via color-mix (support moderne) */
+.badge-initial {
+  background-color: color-mix(in srgb, var(--initial-color) 85%, transparent);
+}
+
+.badge-medial {
+  background-color: color-mix(in srgb, var(--medial-color) 85%, transparent);
+}
+
+.badge-final {
+  background-color: color-mix(in srgb, var(--final-color) 85%, transparent);
+}
+
+.badge-combination {
+  background-color: color-mix(in srgb, var(--combination-color) 85%, transparent);
+}
+
+/* Fallback pour les navigateurs ne supportant pas color-mix */
+@supports not (background-color: color-mix(in srgb, red 85%, transparent)) {
+  .category-badge {
+    /* L'inconvénient de cette méthode de fallback est que le texte blanc perdra aussi 15% d'opacité,
+       mais la couleur de fond sera bien transparente */
+    opacity: 0.85; 
+  }
+  .badge-initial { background-color: var(--initial-color); }
+  .badge-medial { background-color: var(--medial-color); }
+  .badge-final { background-color: var(--final-color); }
+  .badge-combination { background-color: var(--combination-color); }
+}
